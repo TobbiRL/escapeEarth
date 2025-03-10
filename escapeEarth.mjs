@@ -1,7 +1,19 @@
-const url = 'https://spacescavanger.onrender.com/'
+import fetch from 'node-fetch';
 
-const request = new Request('https://spacescavanger.onrender.com/start')
+const url = 'https://spacescavanger.onrender.com/';
+const playerEmail = "torbjornrl@uia.no";
 
-fetch(request)
-console.log(request)
+const request = 'https://spacescavanger.onrender.com/';
+
+const data = {}
+
+fetch("Link", {
+    method: "get",
+    mode: "cors",
+    cache: "default"
+})
+
+.then(response => response.json())
+.then(json => console.log(json))
+.catch(error => console.log(error))
 
