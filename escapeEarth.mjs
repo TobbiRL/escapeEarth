@@ -1,16 +1,20 @@
+/*
 import fetch from 'node-fetch';
+*/
 
-const url = 'https://spacescavanger.onrender.com/';
-const solarUrl = "https://api.le-systeme-solaire.net/en/";
-const playerEmail = "torbjornrl@uia.no";
+const URL = 'https://spacescavanger.onrender.com/';
+const SOLAR_URL = "https://api.le-systeme-solaire.net/en/";
+const MY_EMAIL = "torbjornrl@uia.no";
 
-const startGameUrl = 'https://spacescavanger.onrender.com/'
+const response = fetch("https://spacescavanger.onrender.com//start?player=torbjornrl@uia.no")
 
+/*
 fetch("Link", {
     method: "get",
     headers: "",
     body: i,
 })
+*/
 
 .then(response => response.json())
 .then(json => console.log(json))
