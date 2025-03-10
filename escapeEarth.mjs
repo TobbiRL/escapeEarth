@@ -1,16 +1,15 @@
 import fetch from 'node-fetch';
 
 const url = 'https://spacescavanger.onrender.com/';
+const solarUrl = "https://api.le-systeme-solaire.net/en/";
 const playerEmail = "torbjornrl@uia.no";
 
-const request = 'https://spacescavanger.onrender.com/';
-
-const data = {}
+const startGameUrl = 'https://spacescavanger.onrender.com/'
 
 fetch("Link", {
     method: "get",
-    mode: "cors",
-    cache: "default"
+    headers: "",
+    body: i,
 })
 
 .then(response => response.json())
