@@ -63,7 +63,7 @@ async function jupiterMoonCount() {
 let answer4 = await jupiterMoonCount();
 
 async function jupiterLargestMoon() {
-    const response = await fetch(`${SOLAR_URL}/bodies/jupiter`)
+    const response = await fetch(`${SOLAR_URL}/bodies`)
     const data = await response.json();
 
     let largestMoon = null;
@@ -77,7 +77,8 @@ async function jupiterLargestMoon() {
             }
         }
     }
-    return largestMoon.toLowerCase();
+    console.log(largestMoon);
+    return largestMoon;
 
 }
 let answer5 = await jupiterLargestMoon();
