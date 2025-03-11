@@ -6,7 +6,7 @@ const MY_EMAIL = "torbjornrl@uia.no";
 
 
 async function start() {
-    const response = await fetch("${URL}/start?player=${MY_EMAIL}")
+    const response = await fetch(`${URL}/start?player=${MY_EMAIL}`)
     const data = await response.json();
     console.log("Start game", data);
 }
