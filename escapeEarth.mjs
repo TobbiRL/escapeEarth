@@ -23,8 +23,8 @@ getSolarInformation();
 async function submitChallengeAnswer(answer) {
     const response = await fetch(`${URL}/answer`, {
         method: "POST",
-        headers: "Content-Type", "text/json",
-        body: JSON.stringify({answer, MY_EMAIL}),
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({answer, player: MY_EMAIL}),
     });
     const data = await response.json();
     console.log(data);
