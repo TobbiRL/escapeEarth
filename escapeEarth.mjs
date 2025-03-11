@@ -13,7 +13,7 @@ async function start() {
 start();
 
 async function getSolarInformation() {
-    const response = await fetch(`${SOLAR_URL}/bodies/`)
+    const response = await fetch(`${SOLAR_URL}/bodies/sun`)
     const data = await response.json();
     console.log(data);
 }
@@ -32,4 +32,11 @@ async function submitChallengeAnswer(answer) {
 .then(json => console.log(json))
 .catch(error => console.log(error))
 */
+
+let meanRadiusSun = 695508;
+let equaRadiusSun = 696342;
+
+let answer1 = equaRadiusSun - meanRadiusSun;
+console.log(answer1);
+/* got 834 as answer */
 
