@@ -8,6 +8,9 @@ async function getSolarInformation() {
     console.log(data);
 }
 getSolarInformation();
+let meanRadiusSun = 695508;
+let equaRadiusSun = 696342;
+let answer1 = equaRadiusSun - meanRadiusSun; /* got 834 as answer */
 
 async function getAxalTiltInformation() {
     const response = await fetch(`${SOLAR_URL}/bodies`)
@@ -28,7 +31,7 @@ async function getAxalTiltInformation() {
     }
     return(closestAxialTiltPlanet.toLowerCase());
 }
-let answer2 = getAxalTiltInformation();
+let answer2 = await getAxalTiltInformation();
 
-export {answer2}
+export {answer1, answer2}
 

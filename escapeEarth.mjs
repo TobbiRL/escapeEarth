@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import { json } from 'stream/consumers'; 
+import { answer1, answer2 } from './getSolarInformation.mjs';
 
 const URL = 'https://spacescavanger.onrender.com';
 const MY_EMAIL = "torbjornrl@uia.no";
@@ -9,7 +10,6 @@ async function start() {
     const data = await response.json();
     console.log("Start game", data);
 }
-start();
 
 async function submitChallengeAnswer(answer) {
     const response = await fetch(`${URL}/answer`, {
@@ -21,16 +21,11 @@ async function submitChallengeAnswer(answer) {
     console.log(data);
 }
 
-let meanRadiusSun = 695508;
-let equaRadiusSun = 696342;
-let answer1 = equaRadiusSun - meanRadiusSun; /* got 834 as answer */
+async function runChallenge(){
+await start();
+await submitChallengeAnswer(answer1);
+await submitChallengeAnswer(answer2);
+}
 
-let answer2 = "mars";
-
-submitChallengeAnswer(answer1);
-
-submitChallengeAnswer(answer2);
-
-
-
+runChallenge();
 
