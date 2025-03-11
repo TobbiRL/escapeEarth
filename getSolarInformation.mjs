@@ -28,5 +28,7 @@ async function getAxalTiltInformation() {
     }
     console.log(closestAxialTiltPlanet);
 }
-getAxalTiltInformation();
+let answer2 = getAxalTiltInformation();
+
+export {answer2}
 
