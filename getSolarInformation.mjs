@@ -26,7 +26,7 @@ async function getAxalTiltInformation() {
             }
         }
     }
-    console.log(closestAxialTiltPlanet);
+    return(closestAxialTiltPlanet.toLowerCase());
 }
 let answer2 = getAxalTiltInformation();
 
