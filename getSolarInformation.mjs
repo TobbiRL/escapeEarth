@@ -57,10 +57,10 @@ async function jupiterMoonCount() {
     const data = await response.json();
 
     if (data.moons) {
-        return data.moons.length && console.log(data.moons.length)
+        return data.moons.length
     }
 }
-jupiterMoonCount()
+let answer4 = await jupiterMoonCount();
 
-export {answer1, answer2, answer3}
+export {answer1, answer2, answer3, answer4}
 
