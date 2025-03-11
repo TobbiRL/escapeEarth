@@ -21,22 +21,19 @@ getSolarInformation();
 
 async function submitChallengeAnswer(answer) {
     const response = await fetch(`${URL}/answer`, {
-    method: "POST",
-    headers: "",
-    body: i,
-    })
+        method: "POST",
+        headers: "",
+        body: (answer).json(),
+    });
+    const data = await response.json();
+    console.log(data);
 }
-
-/*
-.then(response => response.json())
-.then(json => console.log(json))
-.catch(error => console.log(error))
-*/
 
 let meanRadiusSun = 695508;
 let equaRadiusSun = 696342;
+let answer1 = equaRadiusSun - meanRadiusSun; /* got 834 as answer */
+submitChallengeAnswer(answer1);
 
-let answer1 = equaRadiusSun - meanRadiusSun;
-console.log(answer1);
-/* got 834 as answer */
+
+
 
