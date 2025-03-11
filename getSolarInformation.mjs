@@ -52,5 +52,15 @@ async function planetWithShortestDay() {
 }
 let answer3 = await planetWithShortestDay();
 
+async function jupiterMoonCount() {
+    const response = await fetch(`${SOLAR_URL}/bodies/jupiter`)
+    const data = await response.json();
+
+    if (data.moons) {
+        return data.moons.length && console.log(data.moons.length)
+    }
+}
+jupiterMoonCount()
+
 export {answer1, answer2, answer3}
 
