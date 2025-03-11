@@ -62,5 +62,25 @@ async function jupiterMoonCount() {
 }
 let answer4 = await jupiterMoonCount();
 
-export {answer1, answer2, answer3, answer4}
+async function jupiterLargestMoon() {
+    const response = await fetch(`${SOLAR_URL}/bodies/jupiter`)
+    const data = await response.json();
+
+    let largestMoon = null;
+    let largestRadius = Infinity;
+
+    for (let body of data.bodies){
+        if (body.isPlanet && body.sideralRotation !== undefined && body.sideralRotation > 0) {
+            if (body.sideralRotation < shortestRotation) {
+                shortestRotation = body.sideralRotation;
+                shortestDayPlanet = body.englishName;
+            }
+        }
+    }
+
+
+}
+let answer5 = await jupiterLargestMoon();
+
+export {answer1, answer2, answer3, answer4, answer5}
 
