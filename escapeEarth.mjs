@@ -1,4 +1,5 @@
 import fetch from 'node-fetch';
+import { json } from 'stream/consumers';
 
 const URL = 'https://spacescavanger.onrender.com';
 const SOLAR_URL = "https://api.le-systeme-solaire.net/rest";
@@ -22,7 +23,7 @@ getSolarInformation();
 async function submitChallengeAnswer(answer) {
     const response = await fetch(`${URL}/answer`, {
         method: "POST",
-        headers: "",
+        headers: "Content-Type", "text/json",
         body: JSON.stringify({answer, MY_EMAIL}),
     });
     const data = await response.json();
