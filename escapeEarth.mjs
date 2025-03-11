@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 const URL = 'https://spacescavanger.onrender.com';
-const SOLAR_URL = "https://api.le-systeme-solaire.net/en/";
+const SOLAR_URL = "https://api.le-systeme-solaire.net/rest";
 const MY_EMAIL = "torbjornrl@uia.no";
 
 
@@ -13,9 +13,9 @@ async function start() {
 start();
 
 async function getSolarInformation() {
-    const response = await fetch(`${SOLAR_URL}`)
+    const response = await fetch(`${SOLAR_URL}/bodies/`)
     const data = await response.json();
-    console.log("Solar data", data);
+    console.log(data);
 }
 getSolarInformation();
 
