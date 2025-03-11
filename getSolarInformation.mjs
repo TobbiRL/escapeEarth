@@ -33,5 +33,24 @@ async function getAxalTiltInformation() {
 }
 let answer2 = await getAxalTiltInformation();
 
-export {answer1, answer2}
+async function planetWithShortestDay() {
+    const response = await fetch(`${SOLAR_URL}/bodies`)
+    const data = await response.json();
+
+    let shortestDayPlanet = null;
+    let shortestRotation = Infinity;
+
+    for (let body of data.bodies){
+        if (body.isPlanet && body.sideralRotation !== undefined && body.sideralRotation > 0) {
+            if (body.sideralRotation < shortestRotation) {
+                shortestRotation = body.sideralRotation;
+                shortestDayPlanet = body.englishName;
+            }
+        }
+    }
+    return(shortestDayPlanet.toLowerCase());
+}
+let answer3 = await planetWithShortestDay();
+
+export {answer1, answer2, answer3}
 

@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { json } from 'stream/consumers'; 
-import { answer1, answer2 } from './getSolarInformation.mjs';
+import { answer1, answer2, answer3} from './getSolarInformation.mjs';
 
 const URL = 'https://spacescavanger.onrender.com';
 const MY_EMAIL = "torbjornrl@uia.no";
@@ -25,6 +25,7 @@ async function runChallenge(){
 await start();
 await submitChallengeAnswer(answer1);
 await submitChallengeAnswer(answer2);
+await submitChallengeAnswer(answer3);
 }
 
 runChallenge();
