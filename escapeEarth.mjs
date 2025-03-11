@@ -27,6 +27,8 @@ let equaRadiusSun = 696342;
 let answer1 = equaRadiusSun - meanRadiusSun; /* got 834 as answer */
 submitChallengeAnswer(answer1);
 
+submitChallengeAnswer("Mercury")
+
 
 
 
