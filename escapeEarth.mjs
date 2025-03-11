@@ -23,7 +23,7 @@ async function submitChallengeAnswer(answer) {
     const response = await fetch(`${URL}/answer`, {
         method: "POST",
         headers: "",
-        body: (answer).json(),
+        body: JSON.stringify(answer),
     });
     const data = await response.json();
     console.log(data);
