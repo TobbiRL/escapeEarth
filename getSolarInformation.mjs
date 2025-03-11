@@ -10,21 +10,23 @@ async function getSolarInformation() {
 getSolarInformation();
 
 async function getAxalTiltInformation() {
-    const response = await fetch(`${SOLAR_URL}`)
+    const response = await fetch(`${SOLAR_URL}/bodies`)
     const data = await response.json();
 
     const EARTH_TILT = 23.44;
     let closestAxialTiltPlanet = null;
     let smallestDifference = Infinity;
 
-    if (bodies.isPlanet && bodies.axialTilt !== undefined) {
-        let difference = (bodies.axialTilt - EARTH_TILT);
-        if (difference < smallestDifference) {
+    for (let body of data.bodies){
+        if (body.isPlanet && body.axialTilt !== undefined) {
+            let difference = (body.axialTilt - EARTH_TILT);
+            if (difference < smallestDifference) {
             smallestDifference = difference;
-            closestAxialTiltPlanet = bodies.englishName
+            closestAxialTiltPlanet = body.englishName
+            }
         }
     }
-
     console.log(closestAxialTiltPlanet);
 }
 getAxalTiltInformation();
+
