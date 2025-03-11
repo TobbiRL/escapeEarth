@@ -18,8 +18,8 @@ async function getAxalTiltInformation() {
     let smallestDifference = Infinity;
 
     for (let body of data.bodies){
-        if (body.isPlanet && body.axialTilt !== undefined) {
-            let difference = (body.axialTilt - EARTH_TILT);
+        if (body.isPlanet && body.axialTilt !== undefined && body.englishName !== "Earth") {
+            let difference = Math.abs(body.axialTilt - EARTH_TILT);
             if (difference < smallestDifference) {
             smallestDifference = difference;
             closestAxialTiltPlanet = body.englishName
