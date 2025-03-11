@@ -70,14 +70,14 @@ async function jupiterLargestMoon() {
     let largestRadius = Infinity;
 
     for (let body of data.bodies){
-        if (body.isPlanet && body.sideralRotation !== undefined && body.sideralRotation > 0) {
-            if (body.sideralRotation < shortestRotation) {
-                shortestRotation = body.sideralRotation;
-                shortestDayPlanet = body.englishName;
+        if (body.aroundPlanet && body.aroundPlanet.planet == "jupiter" && body.meanRadius) {
+            if (body.meanRadius > largestRadius) {
+                largestRadius = body.meanRadius;
+                largestMoon = body.englishName;
             }
         }
     }
-
+    return largestMoon.toLowerCase();
 
 }
 let answer5 = await jupiterLargestMoon();

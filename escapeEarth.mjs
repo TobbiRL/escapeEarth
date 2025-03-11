@@ -27,6 +27,7 @@ await submitChallengeAnswer(answer1);
 await submitChallengeAnswer(answer2);
 await submitChallengeAnswer(answer3);
 await submitChallengeAnswer(answer4);
+await submitChallengeAnswer(answer5);
 }
 
 runChallenge();
