@@ -17,6 +17,14 @@ async function getAxalTiltInformation() {
     let closestAxialTiltPlanet = null;
     let smallestDifference = Infinity;
 
-    console.log(data);
+    if (bodies.isPlanet && bodies.axialTilt !== undefined) {
+        let difference = (bodies.axialTilt - EARTH_TILT);
+        if (difference < smallestDifference) {
+            smallestDifference = difference;
+            closestAxialTiltPlanet = bodies.englishName
+        }
+    }
+
+    console.log(closestAxialTiltPlanet);
 }
 getAxalTiltInformation();
