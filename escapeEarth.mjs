@@ -6,12 +6,11 @@ const MY_EMAIL = "torbjornrl@uia.no";
 
 
 async function start() {
-    const response = await fetch("https://spacescavanger.onrender.com/start?player=torbjornrl@uia.no")
+    const response = await fetch("${URL}/start?player=${MY_EMAIL}")
     const data = await response.json();
     console.log("Start game", data);
 }
 start();
-
 /*
 fetch("Link", {
     method: "get",
