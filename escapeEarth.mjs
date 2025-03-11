@@ -11,13 +11,22 @@ async function start() {
     console.log("Start game", data);
 }
 start();
-/*
-fetch("Link", {
-    method: "get",
+
+async function getSolarInformation() {
+    const response = await fetch(`${SOLAR_URL}`)
+    const data = await response.json();
+    console.log("Solar data", data);
+}
+getSolarInformation();
+
+async function submitChallengeAnswer(answer) {
+    const response = await fetch(`${URL}/answer`, {
+    method: "POST",
     headers: "",
     body: i,
-})
-*/
+    })
+}
+
 /*
 .then(response => response.json())
 .then(json => console.log(json))
