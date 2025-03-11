@@ -1,8 +1,7 @@
 import fetch from 'node-fetch';
-import { json } from 'stream/consumers';
+import { json } from 'stream/consumers'; 
 
 const URL = 'https://spacescavanger.onrender.com';
-const SOLAR_URL = "https://api.le-systeme-solaire.net/rest";
 const MY_EMAIL = "torbjornrl@uia.no";
 
 
@@ -12,13 +11,6 @@ async function start() {
     console.log("Start game", data);
 }
 start();
-
-async function getSolarInformation() {
-    const response = await fetch(`${SOLAR_URL}/bodies/sun`)
-    const data = await response.json();
-    console.log(data);
-}
-getSolarInformation();
 
 async function submitChallengeAnswer(answer) {
     const response = await fetch(`${URL}/answer`, {
