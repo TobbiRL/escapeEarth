@@ -90,9 +90,11 @@ async function plutosClassification() {
 
     for (let body of data.bodies){
         if(body.englishName.toLowerCase()== "pluto") {
-            return body
+            return body.bodyType
         }
+    }
+
 }
+let answer6 = await plutosClassification();
 
-
-export {answer1, answer2, answer3, answer4, answer5}
+export {answer1, answer2, answer3, answer4, answer5, answer6}
