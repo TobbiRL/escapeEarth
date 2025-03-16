@@ -62,15 +62,16 @@ async function jupiterMoonCount() {
 }
 let answer4 = await jupiterMoonCount();
 
+
 async function jupiterLargestMoon() {
     const response = await fetch(`${SOLAR_URL}/bodies`)
     const data = await response.json();
-
+    
     let largestMoon = null;
-    let largestRadius = Infinity;
+    let largestRadius = 0;
 
     for (let body of data.bodies){
-        if (body.aroundPlanet && body.aroundPlanet.planet == "jupiter" && body.meanRadius) {
+        if (body.aroundPlanet && body.aroundPlanet.planet === "jupiter" && body.meanRadius) {
             if (body.meanRadius > largestRadius) {
                 largestRadius = body.meanRadius;
                 largestMoon = body.englishName;
@@ -84,4 +85,3 @@ async function jupiterLargestMoon() {
 let answer5 = await jupiterLargestMoon();
 
 export {answer1, answer2, answer3, answer4, answer5}
-

@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import { json } from 'stream/consumers'; 
-import { answer1, answer2, answer3, answer4} from './getSolarInformation.mjs';
+import { answer1, answer2, answer3, answer4, answer5} from './getSolarInformation.mjs';
 
 const URL = 'https://spacescavanger.onrender.com';
 const MY_EMAIL = "torbjornrl@uia.no";
