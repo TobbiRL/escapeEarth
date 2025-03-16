@@ -84,4 +84,15 @@ async function jupiterLargestMoon() {
 }
 let answer5 = await jupiterLargestMoon();
 
+async function plutosClassification() {
+    const response = await fetch(`${SOLAR_URL}/bodies`)
+    const data = await response.json();
+
+    for (let body of data.bodies){
+        if(body.englishName.toLowerCase()== "pluto") {
+            return body
+        }
+}
+
+
 export {answer1, answer2, answer3, answer4, answer5}
